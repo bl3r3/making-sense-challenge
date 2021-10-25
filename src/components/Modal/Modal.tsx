@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useCallback } from 'react';
 
 import Modal from '@mui/material/Modal';
 
@@ -10,32 +10,16 @@ import HeaderModal from './HeaderModal/HeaderModal.styled';
 import Form from './Form/Form';
 import { HeaderTitle } from './HeaderModal/HeaderTitle.styled';
 import { HeaderClose } from './HeaderModal/HeaderClose.styled';
+import { Modal as Main } from './Modal.styled';
 
-import './modal.css';
+import { Close } from './HeaderModal/Close.styled';
 
 const ModalComponent: FC = () => {
     const [modal, setModal] = useState(false);
 
-    const showModal = () => {
-        setModal(!modal);
-    };
-
-    const body = (
-        <div className="modal">
-            <ModalContainer>
-                <HeaderModal>
-                    <HeaderTitle>
-                        <h3>Welcome Back</h3>
-                    </HeaderTitle>
-                    <HeaderClose role="button" onClick={showModal}>
-                        <CloseIcon className="icon" />
-                    </HeaderClose>
-                </HeaderModal>
-                <p>Please complete Email and Password</p>
-                <Form />
-            </ModalContainer>
-        </div>
-    );
+    const showModal = useCallback(() => {
+        setModal((prevState) => !prevState);
+    }, [setModal]);
 
     return (
         <div>
@@ -43,7 +27,22 @@ const ModalComponent: FC = () => {
                 open
             </Button>
             <Modal open={modal} onClose={showModal}>
-                {body}
+                <Main>
+                    <ModalContainer>
+                        <HeaderModal>
+                            <HeaderTitle>
+                                <h3>Welcome Back</h3>
+                            </HeaderTitle>
+                            <HeaderClose role="button" onClick={showModal}>
+                                <Close>
+                                    <CloseIcon />
+                                </Close>
+                            </HeaderClose>
+                        </HeaderModal>
+                        <p>Please complete Email and Password</p>
+                        <Form />
+                    </ModalContainer>
+                </Main>
             </Modal>
         </div>
     );

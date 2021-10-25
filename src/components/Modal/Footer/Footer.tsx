@@ -6,17 +6,22 @@ import { Button } from './Button.styled';
 import { Anchor } from './Anchor.styled';
 import { ActionsFooter } from './ActionsFooter.styled';
 
-const Footer: FC = () => (
+interface FormProps {
+    button: string;
+    anchor: string;
+}
+
+const Footer: FC = ({ button, anchor }: FormProps) => (
     <Box component="footer" sx={{ mt: 2, width: '100%' }}>
         <Grid container spacing={0.5}>
             <Grid item xs={4} />
             <Grid item xs={8}>
                 <ActionsFooter>
                     <Box component="div">
-                        <Anchor href="/">Sign Up</Anchor>
+                        <Anchor href="/">{anchor}</Anchor>
                     </Box>
                     <Box component="div">
-                        <Button>LOG IN</Button>
+                        <Button>{button}</Button>
                     </Box>
                 </ActionsFooter>
             </Grid>

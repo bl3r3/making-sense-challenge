@@ -20,6 +20,11 @@ interface State {
     password: string;
 }
 
+const sxStyles = { mt: 3, width: '100%' };
+
+// RegExp for validation email
+const reg: RegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+
 const Form: FC = () => {
     const [values, setValues] = useState<State>({
         showPassword: false,
@@ -40,9 +45,6 @@ const Form: FC = () => {
         (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
             setErros({ error: '' });
             setValues({ ...values, [prop]: event.target.value });
-            const reg: RegExp = new RegExp(
-                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-            );
 
             const test: boolean = reg.test(values.email);
 
@@ -64,7 +66,7 @@ const Form: FC = () => {
             onSubmit={handleSubmit}
         >
             <FormGroup>
-                <FormControl sx={{ mt: 3, width: '100%' }}>
+                <FormControl sx={sxStyles}>
                     <TextField
                         fullWidth
                         id="filled-basic"
@@ -77,7 +79,7 @@ const Form: FC = () => {
                         helperText={errors?.error}
                     />
                 </FormControl>
-                <FormControl variant="filled" sx={{ mt: 3, width: '100%' }}>
+                <FormControl variant="filled" sx={sxStyles}>
                     <InputLabel htmlFor="filled-adornment-password">
                         Password
                     </InputLabel>
@@ -106,7 +108,7 @@ const Form: FC = () => {
                     />
                 </FormControl>
             </FormGroup>
-            <Footer />
+            <Footer button="LOG IN" anchor="Sign Up" />
         </Box>
     );
 };

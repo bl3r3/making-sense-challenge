@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const HeaderClose = styled.div`
-    width: 20%;
+export const HeaderClose = styled.i`
+    width: 5%;
     text-align: right;
     cursor: pointer;
 `;

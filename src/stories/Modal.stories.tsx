@@ -7,4 +7,4 @@ export default {
     component: ModalComponent,
 };
 
-export const PrimaryComponent: React.VFC<{}> = () => <ModalComponent />;
+export const PrimaryComponent: React.VFC = () => <ModalComponent />;

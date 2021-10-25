@@ -1,4 +1,6 @@
-.modal {
+import styled from 'styled-components';
+
+export const Modal = styled.div`
     position: absolute;
     width: 375px;
     background: white;
@@ -9,13 +11,4 @@
     transform: translate(-50%, -50%);
     border-radius: 5px;
     color: #646565;
-}
-
-.icon {
-    color: #424242;
-    transition: all 0.2s ease;
-}
-
-.icon:hover {
-    transform: scale(1.2);
-}
+`;

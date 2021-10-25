@@ -18,7 +18,13 @@ import { Content } from './Content.styled';
 // IMAGES
 import AvatarImg from '../../images/Oval.png';
 
-const SimpleCard: FC = () => (
+interface CardProps {
+    contentParagraph: string;
+    link1: string;
+    link2: string;
+}
+
+const SimpleCard: FC = ({ contentParagraph, link1, link2 }: CardProps) => (
     <Container>
         <Content>
             <HeaderCard>
@@ -30,14 +36,11 @@ const SimpleCard: FC = () => (
                     <Subtitle>Subtitle</Subtitle>
                 </HeaderContainer>
             </HeaderCard>
-            <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
-                eiusmod tempor
-            </Paragraph>
+            <Paragraph>{contentParagraph}</Paragraph>
             <Actions>
                 <ActionsContent>
-                    <Link href="/">ACTION 1</Link>
-                    <Link href="/">ACTION 2</Link>
+                    <Link href="/">{link1}</Link>
+                    <Link href="/">{link2}</Link>
                 </ActionsContent>
                 <ActionsContent>
                     <Like />

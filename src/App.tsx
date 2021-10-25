@@ -15,11 +15,21 @@ const App: FC = () => (
         <div className="content">
             <div className="media-card">
                 <h3>Media Card</h3>
-                <MediaCard />
+                <MediaCard
+                    contentParagraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
+                    eiusmod tempor`}
+                    link1="ACTION 1"
+                    link2="ACTION 2"
+                />
             </div>
             <div className="simple-card">
                 <h3>Simple Card</h3>
-                <SimpleCard />
+                <SimpleCard
+                    contentParagraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
+                    eiusmod tempor`}
+                    link1="ACTION 1"
+                    link2="ACTION 2"
+                />
             </div>
             <div className="modal-app">
                 <h3>Modal</h3>
