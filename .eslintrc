@@ -1,0 +1,56 @@
+{
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "prettier",
+        "eslint:recommended",
+        "plugin:import/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "eslint-plugin-no-inline-styles"
+    ],
+    "rules": {
+        "import/prefer-default-export": "off",
+        "no-unused-vars": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-filename-extension": [
+            1,
+            { "extensions": [".tsx", ".ts", ".jsx", ".js"] }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "react/require-default-props": 0,
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/react-in-jsx-scope": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/interactive-supports-focus": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-useless-escape": "off",
+        "import/no-resolve": "off"
+    }
+}
