@@ -20,6 +20,8 @@ Runs the storybook environment.\
 Here you can see all user stories.\
 Open [http://localhost:6000](http://localhost:6000) to view it in the browser.
 
+Mockup: [https://www.figma.com/file/2MyfYk2cYspkSEYCKxWnrK/Storybook-Challenge?node-id=5%3A436](https://www.figma.com/file/2MyfYk2cYspkSEYCKxWnrK/Storybook-Challenge?node-id=5%3A436)
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
